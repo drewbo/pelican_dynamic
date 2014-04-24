@@ -30,7 +30,7 @@ def format_resource(gen, metastring, formatter):
     """
     metalist = metastring.replace(" ", "").split(',')
     site_url = gen.settings['SITEURL']
-    return [formatter.format(site_url, x) for x in metalist]
+    return [formatter.format("", x) for x in metalist]
 
 def copy_resources(src, dest, file_list):
     """
