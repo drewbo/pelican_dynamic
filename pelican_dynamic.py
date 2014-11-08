@@ -72,6 +72,10 @@ def add_tags(gen, metadata):
         d3_script = '<script src="http://d3js.org/d3.v3.min.js"></script>'
         metadata['scripts'].insert(0, d3_script)
 
+    if 'jq' in metadata.keys():
+        jq_script = '<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>'
+        metadata['scripts'].insert(0, jq_script)
+
 def move_resources(gen):
     """
     Move files from js/css folders to output folder
