@@ -76,6 +76,12 @@ def add_tags(gen, metadata):
         jq_script = '<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>'
         metadata['scripts'].insert(0, jq_script)
 
+    if 'mapbox' in metadata.keys():
+        mb_script = '<script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js"></script>'
+        mb_style = '<link href="https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css" rel="stylesheet" />'
+        metadata['scripts'].insert(0, mb_script)
+        metadata['styles'].insert(0, mb_style)
+
 def move_resources(gen):
     """
     Move files from js/css folders to output folder
